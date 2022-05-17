@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My custom Bulma website</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bpg-arial/css/bpg-arial.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./sass/mystyles.css" />
+  </head>
+  <body>
+    <nav class="navbar is-transparent">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <img src="./images/logo.svg" alt="bike" width="112" height="28" />
+        </a>
+        <div
+          class="navbar-burger"
+          data-target="navbarExampleTransparentExample"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#"> მთავარი </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="#"> რესურსები </a>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item" href="#"> მიმოხილვა </a>
+              <a class="navbar-item" href="#"> მოდიფიკაცია </a>
+              <a class="navbar-item" href="#"> სვეტები </a>
+              <a class="navbar-item" href="#"> გაფორმება </a>
+              <a class="navbar-item" href="#"> ცხრილები </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item" href="#"> ელემენტები </a>
+              <a class="navbar-item is-active" href="#"> კომპონენტები </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a
+                  class="bd-tw-button button"
+                  data-social-network="Twitter"
+                  data-social-action="tweet"
+                  data-social-target="https://bulma.io"
+                  target="_blank"
+                  href="#"
+                >
+                  <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+                  <span> Tweet </span>
+                </a>
+              </p>
+              <p class="control">
+                <a class="button is-primary" href="#">
+                  <span class="icon">
+                    <i class="fas fa-download"></i>
+                  </span>
+                  <span>გადმოწერა</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container title__center">
+      <h1 class="title">რეგისტრაცია</h1>
+      <!-- <h2 class="subtitle">შესავსები ფორმა</h2> -->
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="field">
+          <label class="label">სახელი</label>
+          <div class="control has-icons-left">
+            <input
+              class="input"
+              type="text"
+              placeholder="სახელი"
+              id="contact-name"
+              onkeyup="nameValidation()"
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user mrgn__12"></i>
+            </span>
+            <p class="help is-danger name-error"></p>
+          </div>
+        </div>
+
+        <label class="label">მობილური</label>
+        <div class="field has-addons">
+          <p class="control">
+            <a class="button is-static"> +995 </a>
+          </p>
+          <div class="control has-icons-right is-expanded">
+            <input
+              class="input"
+              type="tel"
+              placeholder="მობილური ნომერი"
+              maxlength="9"
+              id="contact-phone"
+              onkeyup="phoneValidation()"
+            />
+            <p class="help is-danger phone-error"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">მეილი</label>
+          <div class="control has-icons-left has-icons-right">
+            <input
+              class="input"
+              type="email"
+              placeholder="მეილი"
+              id="contact-email"
+              onkeyup="emailValidation()"
+            />
+            <p class="help is-danger email-error"></p>
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope mrgn__12"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <!-- <i class="fas fa-exclamation-triangle mrgn__10"></i> -->
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">ქვეყანა</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>აირჩიეთ</option>
+                <option>საქართველო</option>
+                <option>ინგლისი</option>
+                <option>ამერიკა</option>
+                <option>ჰოლანდია</option>
+              </select>
+            </div>
+            <p class="help is-danger subject-error"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">ტექსტი</label>
+          <div class="control">
+            <textarea
+              class="textarea has-fixed-size"
+              placeholder="ტექსტი"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox" />
+              ვეთანხმები <a href="#">წესებსა და პირობებს</a>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="question" />
+              კი
+            </label>
+            <label class="radio">
+              <input type="radio" name="question" />
+              არა
+            </label>
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button id="validateCheck" class="button is-link">გაგზავნა</button>
+            <p class="help is-danger submit-error"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./script/script.js"></script>
+  </body>
+</html>
