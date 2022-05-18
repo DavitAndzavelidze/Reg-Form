@@ -34,7 +34,7 @@ const phoneValidation = function validatePhone() {
     phoneError.innerHTML = "მობილურის ნომერი უნდა იყოს 9 ციფრი";
     return false;
   }
-  if (!phone.match(/^[0-8]{9}$/)) {
+  if (!phone.match(/^[0-9]{9}$/)) {
     phoneError.innerHTML = "მხოლოდ რიცხვები";
     return false;
   }
