@@ -14,7 +14,7 @@ const nameValidation = function validateName() {
     nameError.innerHTML = "სახელის ჩაწერა აუცილებელია";
     return false;
   }
-  if (!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)) {
+  if (!name.match(/^[ა-ჰა-ჰ]*\s{1}[ა-ჰა-ჰ]*$/)) {
     nameError.innerHTML = "ჩაწერეთ სრულად";
     return false;
   }
@@ -50,7 +50,7 @@ const emailValidation = function validateEmail() {
     emailError.innerHTML = "მეილი აუცილებელია";
     return false;
   }
-  if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+  if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
     emailError.innerHTML = "მეილი არასწორია";
     return false;
   }
